@@ -49,8 +49,9 @@ export const getCurrentUser = (): Promise<User | null> => {
   if (!auth) {
     return Promise.resolve(null);
   }
+  const authInstance = auth; // TypeScript now knows this is not undefined
   return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(authInstance, (user) => {
       unsubscribe();
       resolve(user);
     });
