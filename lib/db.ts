@@ -27,7 +27,7 @@ export interface Appointment {
   createdAt?: Date;
 }
 
-export const createAppointment = async (appointment: Omit<Appointment, 'id' | 'createdAt'>) => {
+export const createAppointment = async (appointment: Omit<Appointment, 'id' | 'createdAt' | 'status'>) => {
   if (!db) {
     return { id: null, error: 'Firebase is not configured. Please check your environment variables.' };
   }
