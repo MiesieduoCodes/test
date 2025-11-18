@@ -28,6 +28,9 @@ export interface Appointment {
 }
 
 export const createAppointment = async (appointment: Omit<Appointment, 'id' | 'createdAt'>) => {
+  if (!db) {
+    return { id: null, error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     const docRef = await addDoc(collection(db, 'appointments'), {
       ...appointment,
@@ -42,6 +45,9 @@ export const createAppointment = async (appointment: Omit<Appointment, 'id' | 'c
 };
 
 export const getAppointments = async (userId?: string) => {
+  if (!db) {
+    return { appointments: [], error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     let q = query(collection(db, 'appointments'), orderBy('date', 'desc'));
     
@@ -69,6 +75,9 @@ export const getAppointments = async (userId?: string) => {
 };
 
 export const updateAppointment = async (id: string, updates: Partial<Appointment>) => {
+  if (!db) {
+    return { error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     const appointmentRef = doc(db, 'appointments', id);
     const updateData: any = { ...updates };
@@ -85,6 +94,9 @@ export const updateAppointment = async (id: string, updates: Partial<Appointment
 };
 
 export const deleteAppointment = async (id: string) => {
+  if (!db) {
+    return { error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     await deleteDoc(doc(db, 'appointments', id));
     return { error: null };
@@ -94,6 +106,9 @@ export const deleteAppointment = async (id: string) => {
 };
 
 export const getAppointment = async (id: string) => {
+  if (!db) {
+    return { appointment: null, error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     const docRef = doc(db, 'appointments', id);
     const docSnap = await getDoc(docRef);
@@ -116,5 +131,6 @@ export const getAppointment = async (id: string) => {
     return { appointment: null, error: error.message };
   }
 };
+
 
 

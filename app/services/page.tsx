@@ -1,4 +1,4 @@
-import { Heart, Users, Stethoscope, Activity, Eye, Brain, Bone, Lungs } from 'lucide-react';
+import { Heart, Users, Stethoscope, Activity, Eye, Brain, Bone, Wind } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -45,7 +45,7 @@ const services = [
     features: ['Joint Replacement', 'Sports Medicine', 'Fracture Care', 'Physical Therapy'],
   },
   {
-    icon: Lungs,
+    icon: Wind,
     title: 'Pulmonology',
     description: 'Respiratory health services for lung and breathing conditions.',
     features: ['Lung Function Tests', 'Asthma Management', 'COPD Treatment', 'Sleep Studies'],
@@ -69,15 +69,17 @@ export default function ServicesPage() {
           return (
             <div
               key={service.title}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:-translate-y-2 border border-gray-100"
             >
-              <Icon className="w-12 h-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+              <div className="bg-primary-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <Icon className="w-7 h-7 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, index) => (
-                  <li key={index} className="text-sm text-gray-500 flex items-center">
-                    <span className="w-2 h-2 bg-primary-600 rounded-full mr-2"></span>
+                  <li key={index} className="text-sm text-gray-600 flex items-center">
+                    <span className="w-2 h-2 bg-primary-600 rounded-full mr-2 flex-shrink-0"></span>
                     {feature}
                   </li>
                 ))}
@@ -110,5 +112,6 @@ export default function ServicesPage() {
     </div>
   );
 }
+
 
 

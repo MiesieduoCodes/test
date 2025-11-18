@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Have questions or need assistance? We're here to help. Get in touch with us today.
+          Have questions or need assistance? We&apos;re here to help. Get in touch with us today.
         </p>
       </div>
 
@@ -35,8 +35,8 @@ export default function ContactPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
           <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <div className="bg-primary-100 p-3 rounded-lg">
+            <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+              <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                 <Phone className="w-6 h-6 text-primary-600" />
               </div>
               <div>
@@ -45,8 +45,8 @@ export default function ContactPage() {
                 <p className="text-gray-600">Emergency: +1 (555) 123-4568</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <div className="bg-primary-100 p-3 rounded-lg">
+            <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+              <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                 <Mail className="w-6 h-6 text-primary-600" />
               </div>
               <div>
@@ -55,8 +55,8 @@ export default function ContactPage() {
                 <p className="text-gray-600">support@medtech.com</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <div className="bg-primary-100 p-3 rounded-lg">
+            <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+              <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                 <MapPin className="w-6 h-6 text-primary-600" />
               </div>
               <div>
@@ -65,8 +65,8 @@ export default function ContactPage() {
                 <p className="text-gray-600">City, State 12345</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <div className="bg-primary-100 p-3 rounded-lg">
+            <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+              <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                 <Clock className="w-6 h-6 text-primary-600" />
               </div>
               <div>
@@ -79,11 +79,11 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
           <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
           {submitted && (
             <div className="bg-green-50 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-              Thank you for your message! We'll get back to you soon.
+              Thank you for your message! We&apos;ll get back to you soon.
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -148,7 +148,7 @@ export default function ContactPage() {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition flex items-center justify-center space-x-2"
+              className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition flex items-center justify-center space-x-2 shadow-lg transform hover:scale-105"
             >
               <Send className="w-5 h-5" />
               <span>Send Message</span>
@@ -159,5 +159,6 @@ export default function ContactPage() {
     </div>
   );
 }
+
 
 

@@ -106,7 +106,7 @@ export default function AppointmentsPage() {
       </div>
 
       {showForm && (
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-gray-100">
           <h2 className="text-2xl font-semibold mb-6">Book Appointment</h2>
           {error && (
             <div className="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -214,7 +214,7 @@ export default function AppointmentsPage() {
             </div>
             <button
               type="submit"
-              className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition"
+              className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition shadow-lg transform hover:scale-105"
             >
               Book Appointment
             </button>
@@ -234,7 +234,7 @@ export default function AppointmentsPage() {
             {appointments.map((appointment) => (
               <div
                 key={appointment.id}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -290,5 +290,6 @@ export default function AppointmentsPage() {
     </div>
   );
 }
+
 
 

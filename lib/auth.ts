@@ -9,6 +9,9 @@ import {
 import { auth } from './firebase';
 
 export const login = async (email: string, password: string) => {
+  if (!auth) {
+    return { user: null, error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     return { user: userCredential.user, error: null };
@@ -18,6 +21,9 @@ export const login = async (email: string, password: string) => {
 };
 
 export const signup = async (email: string, password: string, displayName: string) => {
+  if (!auth) {
+    return { user: null, error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(userCredential.user, { displayName });
@@ -28,6 +34,9 @@ export const signup = async (email: string, password: string, displayName: strin
 };
 
 export const logout = async () => {
+  if (!auth) {
+    return { error: 'Firebase is not configured. Please check your environment variables.' };
+  }
   try {
     await signOut(auth);
     return { error: null };
@@ -37,6 +46,9 @@ export const logout = async () => {
 };
 
 export const getCurrentUser = (): Promise<User | null> => {
+  if (!auth) {
+    return Promise.resolve(null);
+  }
   return new Promise((resolve) => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       unsubscribe();
@@ -44,5 +56,6 @@ export const getCurrentUser = (): Promise<User | null> => {
     });
   });
 };
+
 
 

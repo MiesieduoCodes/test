@@ -40,31 +40,31 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               href="/"
-              className={`hover:text-primary-600 transition ${isActive('/') ? 'text-primary-600 font-semibold' : ''}`}
+              className={`transition font-medium ${isActive('/') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className={`hover:text-primary-600 transition ${isActive('/services') ? 'text-primary-600 font-semibold' : ''}`}
+              className={`transition font-medium ${isActive('/services') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
             >
               Services
             </Link>
             <Link
               href="/appointments"
-              className={`hover:text-primary-600 transition ${isActive('/appointments') ? 'text-primary-600 font-semibold' : ''}`}
+              className={`transition font-medium ${isActive('/appointments') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
             >
               Appointments
             </Link>
             <Link
               href="/about"
-              className={`hover:text-primary-600 transition ${isActive('/about') ? 'text-primary-600 font-semibold' : ''}`}
+              className={`transition font-medium ${isActive('/about') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className={`hover:text-primary-600 transition ${isActive('/contact') ? 'text-primary-600 font-semibold' : ''}`}
+              className={`transition font-medium ${isActive('/contact') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
             >
               Contact
             </Link>
@@ -75,14 +75,22 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/dashboard"
-                  className="flex items-center space-x-2 text-primary-600 hover:text-primary-700"
+                  className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition"
                 >
                   <UserIcon className="w-5 h-5" />
                   <span>Dashboard</span>
                 </Link>
+                {(user.email?.includes('admin') || user.email === 'admin@medtech.com') && (
+                  <Link
+                    href="/admin"
+                    className="text-primary-600 hover:text-primary-700 font-semibold transition"
+                  >
+                    Admin
+                  </Link>
+                )}
                 <button
                   onClick={handleLogout}
-                  className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition"
+                  className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition shadow-md hover:shadow-lg"
                 >
                   Logout
                 </button>
@@ -123,35 +131,35 @@ export default function Navbar() {
           <div className="md:hidden py-4 space-y-4">
             <Link
               href="/"
-              className="block hover:text-primary-600 transition"
+              className="block text-gray-700 hover:text-primary-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className="block hover:text-primary-600 transition"
+              className="block text-gray-700 hover:text-primary-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/appointments"
-              className="block hover:text-primary-600 transition"
+              className="block text-gray-700 hover:text-primary-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Appointments
             </Link>
             <Link
               href="/about"
-              className="block hover:text-primary-600 transition"
+              className="block text-gray-700 hover:text-primary-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block hover:text-primary-600 transition"
+              className="block text-gray-700 hover:text-primary-600 transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
@@ -165,6 +173,15 @@ export default function Navbar() {
                 >
                   Dashboard
                 </Link>
+                {(user.email?.includes('admin') || user.email === 'admin@medtech.com') && (
+                  <Link
+                    href="/admin"
+                    className="block text-primary-600 font-semibold"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Admin
+                  </Link>
+                )}
                 <button
                   onClick={() => {
                     handleLogout();
@@ -199,5 +216,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 

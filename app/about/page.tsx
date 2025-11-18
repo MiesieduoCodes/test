@@ -40,59 +40,68 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-gray-50 rounded-lg p-8 mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-8">Our Values</h2>
-        <div className="grid md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <Heart className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Compassion</h3>
-            <p className="text-gray-600">
+      <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-10 mb-16 shadow-lg border border-gray-100">
+        <h2 className="text-3xl font-semibold text-center mb-10">Our Values</h2>
+        <div className="grid md:grid-cols-4 gap-8">
+          <div className="text-center p-6 rounded-lg hover:bg-white hover:shadow-md transition">
+            <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Heart className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Compassion</h3>
+            <p className="text-gray-600 leading-relaxed">
               We treat every patient with empathy, respect, and understanding.
             </p>
           </div>
-          <div className="text-center">
-            <Award className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Excellence</h3>
-            <p className="text-gray-600">
+          <div className="text-center p-6 rounded-lg hover:bg-white hover:shadow-md transition">
+            <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Excellence</h3>
+            <p className="text-gray-600 leading-relaxed">
               We maintain the highest standards in all aspects of medical care.
             </p>
           </div>
-          <div className="text-center">
-            <Users className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Integrity</h3>
-            <p className="text-gray-600">
+          <div className="text-center p-6 rounded-lg hover:bg-white hover:shadow-md transition">
+            <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Integrity</h3>
+            <p className="text-gray-600 leading-relaxed">
               We conduct ourselves with honesty, transparency, and ethical principles.
             </p>
           </div>
-          <div className="text-center">
-            <Target className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-            <p className="text-gray-600">
+          <div className="text-center p-6 rounded-lg hover:bg-white hover:shadow-md transition">
+            <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Target className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Innovation</h3>
+            <p className="text-gray-600 leading-relaxed">
               We embrace new technologies and methods to improve patient care.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-primary-600 text-white rounded-lg p-8">
-        <h2 className="text-3xl font-semibold text-center mb-6">Why Choose Us?</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="text-center">
-            <div className="text-4xl font-bold mb-2">20+</div>
-            <div className="text-lg">Years of Experience</div>
+      <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl p-10 shadow-xl">
+        <h2 className="text-3xl font-semibold text-center mb-8">Why Choose Us?</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
+            <div className="text-5xl font-bold mb-3">20+</div>
+            <div className="text-xl">Years of Experience</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold mb-2">50+</div>
-            <div className="text-lg">Expert Doctors</div>
+          <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
+            <div className="text-5xl font-bold mb-3">50+</div>
+            <div className="text-xl">Expert Doctors</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold mb-2">100K+</div>
-            <div className="text-lg">Patients Served</div>
+          <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
+            <div className="text-5xl font-bold mb-3">100K+</div>
+            <div className="text-xl">Patients Served</div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 
