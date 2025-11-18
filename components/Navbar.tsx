@@ -131,35 +131,35 @@ export default function Navbar() {
           <div className="md:hidden py-4 space-y-4">
             <Link
               href="/"
-              className="block text-gray-700 hover:text-primary-600 transition"
+              className={`block font-medium transition ${isActive('/') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className="block text-gray-700 hover:text-primary-600 transition"
+              className={`block font-medium transition ${isActive('/services') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/appointments"
-              className="block text-gray-700 hover:text-primary-600 transition"
+              className={`block font-medium transition ${isActive('/appointments') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Appointments
             </Link>
             <Link
               href="/about"
-              className="block text-gray-700 hover:text-primary-600 transition"
+              className={`block font-medium transition ${isActive('/about') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block text-gray-700 hover:text-primary-600 transition"
+              className={`block font-medium transition ${isActive('/contact') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
